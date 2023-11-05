@@ -17,7 +17,7 @@ import './react-tagsinput.css';
 import { SearchInput, SearchBar, Breadcrumb, Button } from 'app/components';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
-import textgg from 'assets/translations';
+import text from 'assets/translations';
 
 export namespace AddEmployee {
   export interface Props extends RouteComponentProps<void> {
