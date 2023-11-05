@@ -41,14 +41,14 @@ async function bootstrap() {
       if (isOriginAllowed || allowAccessAnyway) {
         callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'));
+        callback(new Error('Not allowed by CORS'))
       }
     },
   };
-  app.use(cors(corsOptions));
+  app.use(cors(corsOptions))
   app.useGlobalFilters(new ErrorFilter());
   await app.listen(config.PORT);
-  logger.log(`Listening on port ${config.PORT}.`);
+  logger.log(`Listening on port ${config.PORT}.`)
 }
 
 bootstrap();
