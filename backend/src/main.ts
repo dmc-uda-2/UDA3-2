@@ -12,8 +12,8 @@ import { ErrorFilter } from './modules/errors/error.filter';
 
 async function bootstrap() {
   const logger = new AppLogger();
-  logger.info(`NodeJs Version ${process.version}`);
-  logger.info(JSON.stringify(process.env));
+  logggger.info(`NodeJs Version ${process.version}`);
+  logggger.info(JSON.stringify(process.env));
   const server = express();
   const app = await NestFactory.create(AppModule, new ExpressAdapter(server), {
     logger,
@@ -41,14 +41,14 @@ async function bootstrap() {
       if (isOriginAllowed || allowAccessAnyway) {
         callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'))
+        callback(new Error('Not allowed by CORS'));
       }
     },
   };
-  app.use(cors(corsOptions))
+  app.use(cors(corsOptions));
   app.useGlobalFilters(new ErrorFilter());
   await app.listen(config.PORT);
-  logger.log(`Listening on port ${config.PORT}.`)
+  logger.log(`Listening on port ${config.PORT}.`);
 }
 
 bootstrap();
