@@ -370,13 +370,13 @@ jobs:
           command: |
             export BACKEND_URL=$(curl --insecure https://kvdb.io/XFz8RvVbvmGU7kHiKfyAG5/backendurl)
             echo $BACKEND_URL
-            curl "$BACKEND_URL:3030/api/statusggg"
+            curl "$BACKEND_URL:3030/api/status"
             if curl "$BACKEND_URL:3030/api/status" | grep "ok"
             then
               return 0
             else
               return 1
-            fi
+            fibb
       - run:
           name: Frontend smoke test.
           command: |
