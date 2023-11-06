@@ -376,7 +376,7 @@ jobs:
               return 0
             else
               return 1
-            fibb
+            fi
       - run:
           name: Frontend smoke test.
           command: |
